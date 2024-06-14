@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Component import
+// Component imports
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from './components/about/about.jsx';
@@ -16,6 +16,7 @@ import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 import Footer from "./components/Footer/Footer";
 import Crypto from "./crypto";
+import AuthProviderWrapper from "./AuthProviderWrapper"; // Assurez-vous que ce composant est correctement implémenté
 
 const App = () => {
     useEffect(() => {
@@ -29,36 +30,31 @@ const App = () => {
     }, []);
 
     return (
-        <div className="bg-white dark:bg-black dark:text-white text-black overflow-x-hidden">
-
-            <BrowserRouter>
-                <Navbar />
-                <Routes>
-                    <Route  path="/"
+        <AuthProviderWrapper>
+            <div className="bg-white dark:bg-black dark:text-white text-black overflow-x-hidden">
+                    <Navbar />
+                    <Routes>
+                        <Route
+                            path="/"
                             element={
                                 <>
                                     <Hero />
                                     <BlogsComp />
-
                                 </>
                             }
-                    />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/consultation" element={<Consultation />} />
-                    <Route path="/cryptomonnaie" element={<Cryptomonnaie />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/crypto" element={<Crypto />} />
-
-
-                </Routes>
-                <Footer />
-
-            </BrowserRouter>
-
-        </div>
+                        />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/services" element={<Services />} />
+                        <Route path="/consultation" element={<Consultation />} />
+                        <Route path="/cryptomonnaie" element={<Cryptomonnaie />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/crypto" element={<Crypto />} />
+                    </Routes>
+                    <Footer />
+            </div>
+        </AuthProviderWrapper>
     );
 };
 

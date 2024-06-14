@@ -6,11 +6,11 @@ const Contact = () => {
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Coordonnées */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 font-semibold text-violet-950 dark:text-primary" >
                         <h2 className="text-3xl font-semibold text-violet-950 dark:text-primary">
                             Contactez-nous
                         </h2>
-                        <p>
+                        <p >
                             Pour toute demande d'information ou assistance, n'hésitez pas à
                             nous contacter aux coordonnées suivantes :
                         </p>

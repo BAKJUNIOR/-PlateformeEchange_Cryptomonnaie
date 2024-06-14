@@ -1,9 +1,11 @@
+// Navbar.js
 import React, { useState } from "react";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ResponsiveMenu from "./ResponsiveMenu";
 import Logo from "../../assets/website/Vector.svg";
 import DarkMode from "./DarkMode";
+import { useAuth } from "../../AuthContext"; // Importez le hook useAuth
 
 export const MenuLinks = [
   {
@@ -30,9 +32,21 @@ export const MenuLinks = [
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { isAuthenticated, logout } = useAuth(); // Utilisez le hook useAuth pour obtenir l'état et les actions
+  const navigate = useNavigate();
+  const [goodbyeMessage, setGoodbyeMessage] = useState(""); // État pour le message d'au revoir
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const handleLogout = () => {
+    setGoodbyeMessage("Au revoir à très bientôt. Pensez à vous reconnecter avant d'utiliser les services.!");
+    setTimeout(() => {
+      setGoodbyeMessage("");
+      logout();
+      navigate('/login'); // Rediriger vers la page de connexion
+    }, 4000); // Réinitialiser le message après 4 secondes
   };
 
   return (
@@ -48,10 +62,7 @@ const Navbar = () => {
             <nav className="hidden md:block">
               <ul className="flex items-center gap-8">
                 {MenuLinks.map(({ id, name, link }) => (
-                    <li
-                        key={id}
-                        className="py-4"
-                    >
+                    <li key={id} className="py-4">
                       <Link
                           to={link || "#"}
                           className="text-lg font-medium hover:text-primary py-2 hover:border-b-2 hover:border-primary transition-colors duration-500"
@@ -60,9 +71,15 @@ const Navbar = () => {
                       </Link>
                     </li>
                 ))}
-                <Link to="/login" className="primary-btn">
-                  Se Connecter
-                </Link>
+                {isAuthenticated ? (
+                    <button onClick={handleLogout} className="primary-btn">
+                      Se déconnecter
+                    </button>
+                ) : (
+                    <Link to="/login" className="primary-btn">
+                      Se Connecter
+                    </Link>
+                )}
                 <DarkMode />
               </ul>
             </nav>
@@ -87,6 +104,12 @@ const Navbar = () => {
           </div>
         </div>
         <ResponsiveMenu showMenu={showMenu} />
+        {goodbyeMessage && (
+            <div className="absolute top-0 left-0 right-0 bg-primary text-white text-center py-4">
+              <p className="font-bold text-xl">{goodbyeMessage}</p>
+            </div>
+
+        )}
       </div>
   );
 };
