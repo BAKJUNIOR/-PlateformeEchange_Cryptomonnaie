@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 // Component imports
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import Equipes from "./components/Equipes/equipes";
 import About from './components/about/about.jsx';
 import Services from "./components/Services/Services";
 import Consultation from './components/Consultation/Consultation';
@@ -40,6 +41,7 @@ const App = () => {
                                 <>
                                     <Hero />
                                     <BlogsComp />
+                                    <Equipes />
                                 </>
                             }
                         />

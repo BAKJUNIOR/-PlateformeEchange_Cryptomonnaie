@@ -1,5 +1,14 @@
 import React from "react";
 
+import Brand1 from "../../assets/brands/1.svg";
+import Brand2 from "../../assets/brands/2.svg";
+import Brand3 from "../../assets/brands/3.svg";
+import Brand4 from "../../assets/brands/4.svg";
+import Brand5 from "../../assets/brands/5.svg";
+import Equipes from "../Equipes/equipes";
+
+
+
 const About = () => {
     return (
         <div className="container mx-auto p-4 space-y-8">
@@ -32,16 +41,7 @@ const About = () => {
                     Notre équipe est composée d'experts passionnés dans divers domaines technologiques, dédiés à fournir des solutions innovantes et des formations personnalisées.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <div className="text-center p-4 border rounded-lg dark:border-gray-700">
-                        <img
-                            src="path_to_image"
-                            alt="Nom de l'équipe"
-                            className="w-24 h-24 mx-auto rounded-full mb-4"
-                        />
-                        <h3 className="text-xl font-semibold">Nom de l'équipe</h3>
-                        <p className="text-gray-600 dark:text-gray-400">Position</p>
-                    </div>
-                    {/* Ajouter d'autres membres de l'équipe ici */}
+                    {Equipes}
                 </div>
             </section>
 
@@ -67,23 +67,23 @@ const About = () => {
             </section>
 
             {/* Partenaires Section */}
-            <section>
-                <h2 className="text-3xl font-semibold text-violet-950 dark:text-primary mb-4">
-                    Partenaires
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+            <section >
+                <h1 className="text-3xl font-semibold sm:text-3xl text-violet-950 dark:text-primary ">nos partenaires</h1>
+
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-2xl">
                     Nous collaborons avec un réseau de partenaires de premier plan pour offrir les meilleures solutions et opportunités à nos clients.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <div className="text-center p-4 border rounded-lg dark:border-gray-700">
-                        <img
-                            src="path_to_partner_logo"
-                            alt="Nom du partenaire"
-                            className="w-24 h-24 mx-auto mb-4"
-                        />
-                        <h3 className="text-xl font-semibold">Nom du partenaire</h3>
+                <div className="container mb-12 mt-12 sm:mt-0">
+                    <div >
+                        <div className="py-6 md:px-32 flex flex-wrap items-center justify-evenly gap-3">
+                            <img src={Brand1} alt="" />
+                            <img src={Brand2} alt="" />
+                            <img src={Brand3} alt="" />
+                            <img src={Brand4} alt="" />
+                            <img src={Brand5} alt="" />
+                        </div>
                     </div>
-                    {/* Ajouter d'autres partenaires ici */}
+
                 </div>
             </section>
         </div>
