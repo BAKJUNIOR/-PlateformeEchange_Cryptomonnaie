@@ -44,7 +44,7 @@ input[type="number"] {
     height: 123px;
     border-radius: 50%;
 
-    background: #6153CD;
+    background: #d90d2b;
     filter: blur(200px);
 }
 
@@ -54,6 +54,6 @@ input[type="number"] {
             #fb37ff 1.7%,
             rgba(155, 111, 238, 0) 27.12%,
             rgba(123, 127, 234, 0) 61.28%,
-            #6153CD 99.52%
+            #da0911 99.52%
     );
 }

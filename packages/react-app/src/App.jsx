@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 // Component imports
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import Equipes from "./components/Equipes/equipes";
 import About from './components/about/about.jsx';
 import Services from "./components/Services/Services";
 import Consultation from './components/Consultation/Consultation';
@@ -16,6 +17,8 @@ import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 import Footer from "./components/Footer/Footer";
 import Crypto from "./crypto";
+import Tutoriel from "./components/Tutoriel/Tutoriel";
+import AddCourseForm from "./components/Tutoriel/AddCourseForm";
 import AuthProviderWrapper from "./AuthProviderWrapper"; // Assurez-vous que ce composant est correctement implémenté
 
 const App = () => {
@@ -40,6 +43,7 @@ const App = () => {
                                 <>
                                     <Hero />
                                     <BlogsComp />
+                                    <Equipes />
                                 </>
                             }
                         />
@@ -51,6 +55,9 @@ const App = () => {
                         <Route path="/register" element={<Register />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/crypto" element={<Crypto />} />
+                        <Route path="/Tutoriel" element={<Tutoriel />} />
+                        <Route path="/AddCourseForm" element={<AddCourseForm />} />
+
                     </Routes>
                     <Footer />
             </div>

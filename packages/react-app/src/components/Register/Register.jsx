@@ -31,7 +31,7 @@ const Register = () => {
             formData.append('password', password);
             formData.append('photo', photo); // Assurez-vous que 'photo' est bien ajouté comme chaîne de caractères ou en tant que fichier
 
-            const response = await axios.post('http://localhost:5050/inscription/', { ...data, photo: `/photos/${photoFileName}` });
+            const response = await axios.post('http://localhost:5051/inscription/', { ...data, photo: `/photos/${photoFileName}` });
             console.log(response.data);
             setInscriptionSuccess(true); // Activer le message d'inscription réussie
         } catch (error) {

@@ -106,7 +106,7 @@ const Navbar = () => {
         <ResponsiveMenu showMenu={showMenu} />
         {goodbyeMessage && (
             <div className="absolute top-0 left-0 right-0 bg-primary text-white text-center py-4">
-              <p className="font-bold text-xl">{goodbyeMessage}</p>
+              <p className="font-bold  text-xl">{goodbyeMessage}</p>
             </div>
 
         )}

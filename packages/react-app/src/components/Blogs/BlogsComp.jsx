@@ -26,10 +26,10 @@ const BlogsData = [
   {
     id: 3,
     image: Img3,
-    title: "Tutoriat",
+    title: "Tutoriel",
     description:
         "Nous offrons un soutien personnalisé pour les étudiants en licence et master en informatique avec des cours et des travaux pratiques.",
-    link: "/tutorial"
+    link: "/Tutoriel"
   },
   {
     id: 4,
