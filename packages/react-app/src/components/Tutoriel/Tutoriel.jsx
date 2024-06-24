@@ -10,14 +10,20 @@ const TutorielPage = () => {
     const [showModal, setShowModal] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-    useEffect(() => {
+    const fetchTutoriels = () => {
         utilisateurApi().getAllTutoriats()
             .then(response => {
-                setTutoriels(response.data);
+                // Trier les tutoriels par date de publication du plus récent au plus ancien
+                const sortedTutoriels = response.data.sort((a, b) => new Date(b.datePublication) - new Date(a.datePublication));
+                setTutoriels(sortedTutoriels);
             })
             .catch(error => {
                 console.error("Erreur lors de la récupération des tutoriels", error);
             });
+    };
+
+    useEffect(() => {
+        fetchTutoriels();
     }, []);
 
     const openModal = () => {
@@ -30,6 +36,7 @@ const TutorielPage = () => {
 
     const handleCourseAdded = () => {
         setShowSuccessMessage(true);
+        fetchTutoriels(); // Rafraîchir la liste des tutoriels
         setTimeout(() => {
             setShowSuccessMessage(false);
         }, 3000);

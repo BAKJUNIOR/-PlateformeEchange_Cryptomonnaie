@@ -1,26 +1,25 @@
 import React from "react";
 import Slider from "react-slick";
-import Img5 from "../../assets/blog/moi.jpeg";
+// import Img5 from "../../assets/blog/moi.jpeg";
 
 const testimonialData = [
     {
         id: 1,
-        name: "David Calathan - Director of Design Operations, New York",
-        text: "The results have been incredible. With Power Digital, it feels like they’re in our trench, supporting and understanding us. They’re like a partner and mentor in helping us get where we want to be.",
-        img: Img5,
+        name: "Bakayoko Bassindou Junior",
+        text: "Développeur informatique d'application web et mobile, Ingénieur." +
+            "développeur Full Stack junior chez Opnin Corporation, spécialisé en HTML/CSS, Bootstrap, Java, PHP, Python et Kotlin. Certifié en Maintenance Informatique et Réseau (D.Q.P) et" +
+            " en Administration de base de données, avec une maîtrise de l'Anglais et impliqué \"",
+        // img: Img5,
     },
     {
         id: 1,
-        name: "David Calathan - Director of Design Operations, New York",
-        text: "The results have been incredible. With Power Digital, it feels like they’re in our trench, supporting and understanding us. They’re like a partner and mentor in helping us get where we want to be.",
-        img:Img5,
+        name: "Hien Dary Konlare Guy Ronsard",
+        text: "Développeur informatique d'application web et mobile, Ingénieur." +
+            "développeur Full Stack junior chez Opnin Corporation, spécialisé en HTML/CSS, Bootstrap, Java, PHP, Python et Kotlin. Certifié en Maintenance Informatique et Réseau (D.Q.P) et" +
+            " en Administration de base de données, avec une maîtrise de l'Anglais et impliqué \"",
+        // img:Img5,
     },
-    {
-        id: 1,
-        name: "Smith - Director of Operations, New York",
-        text: "The results have been incredible. With Power Digital, it feels like they’re in our trench, supporting and understanding us. They’re like a partner and mentor in helping us get where we want to be.",
-        img: Img5,
-    },
+
 ];
 
 const Testimonial = () => {
